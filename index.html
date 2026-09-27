@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Glassmorphism Interface</title>
+    <title>web</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,18 +22,29 @@
             </button>
 
             <nav class="nav-links" id="navLinks">
-                <a href="#" class="active">Home</a>
-                <a href="#">Explore</a>
-                <a href="#">Settings</a>
+                <a href="#" class="nav-item active" data-tab="home"> Home</a>
+                <a href="#" class="nav-item " data-tab="Explore">Explore</a>
+                <a href="#" class="nav-item" data-tab="settings">Settings</a>
             </nav>
         </header>
 
         <section class="glass-card">
-            <h1>Dynamic Interaction Active</h1>
-            <p>Your workspace is fully responsive. Move your mouse across the desktop canvas screen frame to feel the real-time lighting adjustments tracker update dynamically.</p>
-            <a href="#" class="glass-btn" id="actionBtn">Trigger Prompt Effect</a>
+            <h1 id="main-title">The future  starts here</h1>
+            <p id="main-text">Connect with a growing network of creators, builders, and innovators. Access exclusive resources, collaborate on projects, and level up your skills alongside peers.</p>
+            <a href="#" class="glass-btn" id="actionBtn">Join</a>
         </section>
     </main>
+    
+    <div class="earth-container">
+        <div class="earth-globe">
+            <div class="earth-landmass"></div>
+            <div class="earth-ping ping-1"></div>
+            <div class="earth-ping ping-2"></div>
+        </div>
+        <p class="earth-text">Connecting</p>
+    </div>
+
     <script src="scripr.js"></script>
+
 </body>
 </html>
