@@ -62,7 +62,10 @@ function createBackgroundParticle() {
 
     particle.style.left = `${Math.random() * 100}vw`;
     
-    particle.style.top = '105vh';
+    // Position fixed to bottom of screen view
+    particle.style.position = 'fixed';
+    particle.style.bottom = '0px';
+    particle.style.top = 'auto';
 
     const colors = ['#0ea5e9', '#ec4899', '#a855f7'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -74,10 +77,15 @@ function createBackgroundParticle() {
         particle.remove();
     }, 3000);
 }
+
+/* ==========================================================
+   EARTH INTERACTION & ANIMATION SCRIPT
+   ========================================================== */
+
 const earthGlobe = document.querySelector('.earth-globe');
 
 if (earthGlobe) {
-   
+    // 3D Perspective Tilt on Mouse Movement
     document.addEventListener('mousemove', (e) => {
         const rect = earthGlobe.getBoundingClientRect();
         const globeCenterX = rect.left + rect.width / 2;
@@ -93,10 +101,13 @@ if (earthGlobe) {
         earthGlobe.style.transition = 'transform 0.1s ease-out';
     });
 
+    // Reset Tilt when mouse leaves window
     document.addEventListener('mouseleave', () => {
         earthGlobe.style.transform = 'perspective(600px) rotateX(0deg) rotateY(0deg)';
         earthGlobe.style.transition = 'transform 0.6s ease';
     });
+
+    // Pulse Wave Effect on Clicking the Earth Globe
     earthGlobe.addEventListener('click', (e) => {
         const ping = document.createElement('div');
         ping.classList.add('earth-ping');
